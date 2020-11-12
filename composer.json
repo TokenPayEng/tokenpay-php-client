@@ -1,0 +1,39 @@
+{
+    "name": "tokenpay/tokenpay-php-client",
+    "type": "library",
+    "description": "tokenpay php client",
+    "homepage": "https://www.tokenpay.com.tr",
+    "keywords": [
+        "tokenpay",
+        "tokenpay.com.tr"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Token Inc. and contributors",
+            "homepage": "https://github.com/craftbaseio/tokenpay-php-client/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "satooshi/php-coveralls": "~0.6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tokenpay\\": "lib/Tokenpay/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "": "unit-tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --colors"
+    }
+}
