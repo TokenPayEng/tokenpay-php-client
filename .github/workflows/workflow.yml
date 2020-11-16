@@ -16,52 +16,20 @@ on:
 
 jobs:
   run:
-    name: Run
     runs-on: ${{ matrix.operating-system }}
     strategy:
-      fail-fast: false
       matrix:
-        operating-system: [ubuntu-16.04]
-        php-versions: ['5.3', '5.4', '5.5', '5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0', '8.1']
-    env:
-      extensions: xml, opcache, xdebug, pcov
-      key: cache-v3
+        operating-system: [ubuntu-latest]
+        php-versions: ['7.2', '7.3']
+    name: PHP ${{ matrix.php-versions }} Test on ${{ matrix.operating-system }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Setup cache environment
-        id: extcache
-        uses: shivammathur/cache-extensions@develop
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-versions }}
-          extensions: ${{ env.extensions }}
-          key: ${{ env.key }}
-
-      - name: Cache extensions
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.extcache.outputs.dir }}
-          key: ${{ steps.extcache.outputs.key }}
-          restore-keys: ${{ steps.extcache.outputs.key }}
-
-      - name: Testing PHP version
-        run: |
-          php -v
-          php -r "if(strpos(phpversion(), '${{ matrix.php-versions }}') === false) {throw new Exception('Wrong PHP version Installed');}"
-      - name: Testing Composer version
-        run: |
-          composer -V
-          php -r "if(strpos(@exec('composer -V'), 'Composer version') === false) {throw new Exception('Composer not found');}"
-      - name: Testing Extensions
-        run: |
-          php -m
-          php -r "if(! extension_loaded('xml')) {throw new Exception('xml not found');}"
-          php -r "if(! extension_loaded('Xdebug')) {throw new Exception('Xdebug not found');}"
-          php -r "if(phpversion()>=7.1 && ! extension_loaded('pcov')) {throw new Exception('PCOV not found');}"
-      - name: Testing ini values
-        run: |
-          php -r "if(ini_get('memory_limit')!='-1') {throw new Exception('memory_limit not disabled');}"
-          php -r "if(ini_get('post_max_size')!='256M') {throw new Exception('post_max_size not added');}"
-          php -r "if(ini_get('short_open_tag')!=1) {throw new Exception('short_open_tag not added');}"
-          php -r "if(ini_get('date.timezone')!='Asia/Kolkata') {throw new Exception('date.timezone not added');}"
+          extensions: intl #optional
+          ini-values: "post_max_size=256M" #optional
+      - name: Check PHP Version
+        run: php -v
