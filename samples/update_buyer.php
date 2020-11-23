@@ -3,12 +3,12 @@
 require_once('config/sample_config.php');
 
 $request = array(
-    'name' => 'Name',
-    'surname' => 'Surname',
-    'email' => 'email@mail.com',
-    'tckn' => '52059294929',
-    'gsmNumber' => '905555555555',
-    'buyerExternalId' => '8783943894'
+    'name' => 'Haluk',
+    'surname' => 'Demir',
+    'email' => 'haluk.demir@example.com',
+    'identityNumber' => '11111111110',
+    'gsmNumber' => '905551111111',
+    'buyerExternalId' => uniqid()
 );
 
 $response = FunctionalTestConfig::tokenpay()->onboarding()->updateBuyer(1, $request);

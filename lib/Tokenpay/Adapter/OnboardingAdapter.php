@@ -17,9 +17,9 @@ class OnboardingAdapter extends BaseAdapter
         return parent::httpPost($path, $request);
     }
 
-    public function updateSubMerchant(array $request)
+    public function updateSubMerchant($subMerchantId, array $request)
     {
-        $path = "/onboarding/v1/sub-merchants";
+        $path = "/onboarding/v1/sub-merchants/" . $subMerchantId;
         return parent::httpPut($path, $request);
     }
 

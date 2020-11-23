@@ -2,10 +2,12 @@
 
 require_once('config/sample_config.php');
 
+use Tokenpay\Model\Currency;
+use Tokenpay\Model\PaymentStatus;
+
 $request = array(
-    'binNumber' => '554960',
-    'price' => '100',
-    'currency' => 'TRY'
+    'paymentStatus' => PaymentStatus::SUCCESS,
+    'currency' => Currency::TL
 );
 
 $response = FunctionalTestConfig::tokenpay()->payment()->searchPayments($request);

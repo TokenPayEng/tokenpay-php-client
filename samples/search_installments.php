@@ -5,7 +5,7 @@ require_once('config/sample_config.php');
 use Tokenpay\Model\Currency;
 
 $request = array(
-    'binNumber' => '554960',
+    'binNumber' => '525864',
     'price' => 100,
     'currency' => Currency::TL
 );

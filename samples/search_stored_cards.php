@@ -2,12 +2,19 @@
 
 require_once('config/sample_config.php');
 
+use Tokenpay\Model\CardAssociation;
+use Tokenpay\Model\CardType;
+
 $request = array(
-    'cardUserKey' => 'de050909-39a9-473c-a81a-f186dd55cfef'
+    'cardAlias' => 'My YKB Card',
+    'cardBankName' => 'YAPI VE KREDİ BANKASI A.Ş.',
+    'cardBrand' => 'World',
+    'cardAssociation' => CardAssociation::MASTER_CARD,
+    'cardToken' => 'd9b19d1a-243c-43dc-a498-add08162df72',
+    'cardUserKey' => 'c115ecdf-0afc-4d83-8a1b-719c2af19cbd',
+    'cardType' => CardType::CREDIT_CARD
 );
 
 $response = FunctionalTestConfig::tokenpay()->payment()->searchStoredCards($request);
-
-// todo: errors varsa exception firlat. yoksa json_decode edip array dön.
 
 print_r($response);

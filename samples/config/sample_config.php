@@ -14,7 +14,7 @@ class FunctionalTestConfig
         $options = new RequestOptions();
         $options->setApiKey('api-key');
         $options->setSecretKey('secret-key');
-        $options->setBaseUrl('http://localhost:8000');
+        $options->setBaseUrl('http://api-gateway.tokenpay.com.tr');
         return new TokenPay($options);
     }
 }

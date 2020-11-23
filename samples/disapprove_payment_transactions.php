@@ -3,7 +3,8 @@
 require_once('config/sample_config.php');
 
 $request = array(
-    'paymentTransactionIds' => array(1, 2, 3)
+    'paymentTransactionIds' => array(1, 2),
+    'isTransactional' => false
 );
 
 $response = FunctionalTestConfig::tokenpay()->payment()->disapprovePaymentTransactions($request);

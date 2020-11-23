@@ -6,7 +6,6 @@ use Tokenpay\Model\RefundDestinationType;
 
 $request = array(
     'paymentId' => 1,
-    'conversationId' => uniqid(),
     'refundDestinationType' => RefundDestinationType::CARD
 );
 
