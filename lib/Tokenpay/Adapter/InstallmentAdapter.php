@@ -11,15 +11,15 @@ class InstallmentAdapter extends BaseAdapter
         parent::__construct($requestOptions);
     }
 
-    public function binCheck($binNumber)
+    public function searchInstallments(array $request)
     {
-        $path = "/installment/v1/bins/" . $binNumber;
+        $path = "/installment/v1/installments" . RequestQueryParamsBuilder::buildQuery($request);
         return parent::httpGet($path);
     }
 
-    public function retrieveInstallments(array $request)
+    public function retrieveBinNumber($binNumber)
     {
-        $path = "/installment/v1/installments" . RequestQueryParamsBuilder::buildQuery($request);
+        $path = "/installment/v1/bins/" . $binNumber;
         return parent::httpGet($path);
     }
 }

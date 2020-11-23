@@ -41,31 +41,31 @@ class PaymentAdapter extends BaseAdapter
         return parent::httpPost($path, $request);
     }
 
-    public function refund(array $request)
+    public function refundPayment(array $request)
     {
         $path = "/payment/v1/refunds";
         return parent::httpPost($path, $request);
     }
 
-    public function retrieveRefund($refundId)
+    public function retrievePaymentRefund($refundId)
     {
         $path = "/payment/v1/refunds/" . $refundId;
         return parent::httpGet($path);
     }
 
-    public function refundTransaction(array $request)
+    public function refundPaymentTransaction(array $request)
     {
         $path = "/payment/v1/refund-transactions";
         return parent::httpPost($path, $request);
     }
 
-    public function retrieveRefundTransactions($refundTransactionId)
+    public function retrievePaymentTransactionRefund($refundTransactionId)
     {
         $path = "/payment/v1/refund-transactions/" . $refundTransactionId;
         return parent::httpGet($path);
     }
 
-    public function searchRefundTransactions(array $request)
+    public function searchPaymentTransactionRefunds(array $request)
     {
         $path = "/payment/v1/refund-transactions" . RequestQueryParamsBuilder::buildQuery($request);
         return parent::httpGet($path);
@@ -80,6 +80,18 @@ class PaymentAdapter extends BaseAdapter
     public function searchPayments(array $request)
     {
         $path = "/payment/v1/card-payments" . RequestQueryParamsBuilder::buildQuery($request);
+        return parent::httpGet($path);
+    }
+
+    public function deleteStoredCard(array $request)
+    {
+        $path = "/payment/v1/cards" . RequestQueryParamsBuilder::buildQuery($request);
+        return parent::httpDelete($path);
+    }
+
+    public function searchStoredCards(array $request)
+    {
+        $path = "/payment/v1/cards" . RequestQueryParamsBuilder::buildQuery($request);
         return parent::httpGet($path);
     }
 }

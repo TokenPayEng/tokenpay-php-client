@@ -11,13 +11,13 @@ class SettlementReportingAdapter extends BaseAdapter
         parent::__construct($requestOptions);
     }
 
-    public function retrieveBouncedSubMerchantRows(array $request)
+    public function searchBouncedSubMerchantRows(array $request)
     {
         $path = "/settlement-reporting/v1/settlement-file/bounced-sub-merchant-rows" . RequestQueryParamsBuilder::buildQuery($request);
         return parent::httpGet($path);
     }
 
-    public function retrievePayoutCompletedTransactions(array $request)
+    public function searchPayoutCompletedTransactions(array $request)
     {
         $path = "/settlement-reporting/v1/settlement-file/payout-completed-transactions" . RequestQueryParamsBuilder::buildQuery($request);
         return parent::httpGet($path);

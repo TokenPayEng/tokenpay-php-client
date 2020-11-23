@@ -2,7 +2,7 @@
 
 namespace Tokenpay\HttpClient;
 
-class RestClientCurlAdapter implements RestClient
+class RestClientAdapter implements RestClient
 {
     private $curlExec;
 

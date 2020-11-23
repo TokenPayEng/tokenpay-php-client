@@ -7,6 +7,6 @@ $request = array(
     'cardToken' => 'de050909-39a9-473c-a81a-f186dd55cfex'
 );
 
-$response = FunctionalTestConfig::tokenpay()->card()->deleteCard($request);
+$response = FunctionalTestConfig::tokenpay()->payment()->deleteStoredCard($request);
 
 print_r($response);

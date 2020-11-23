@@ -5,7 +5,7 @@ require_once(dirname(__DIR__) . '/../TokenpayBootstrap.php');
 TokenpayBootstrap::init();
 
 use Tokenpay\Request\Common\RequestOptions;
-use Tokenpay\Tokenpay;
+use Tokenpay\TokenPay;
 
 class FunctionalTestConfig
 {
@@ -15,6 +15,6 @@ class FunctionalTestConfig
         $options->setApiKey('api-key');
         $options->setSecretKey('secret-key');
         $options->setBaseUrl('http://localhost:8000');
-        return new Tokenpay($options);
+        return new TokenPay($options);
     }
 }

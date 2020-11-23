@@ -2,7 +2,7 @@
 
 namespace Tokenpay\Adapter;
 
-use Tokenpay\HttpClient\RestClientCurlAdapter;
+use Tokenpay\HttpClient\RestClientAdapter;
 use Tokenpay\Util\AuthSignatureGenerator;
 
 class BaseAdapter
@@ -13,7 +13,7 @@ class BaseAdapter
     public function __construct($requestOptions)
     {
         $this->requestOptions = $requestOptions;
-        $this->restClient = new RestClientCurlAdapter();
+        $this->restClient = new RestClientAdapter();
     }
 
     protected function setRestClient($restClient)

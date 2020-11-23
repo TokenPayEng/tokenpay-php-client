@@ -7,6 +7,6 @@ $request = array(
     'conversationId' => uniqid()
 );
 
-$response = FunctionalTestConfig::tokenpay()->payment()->searchRefundTransactions($request);
+$response = FunctionalTestConfig::tokenpay()->payment()->searchPaymentTransactionRefunds($request);
 
 print_r($response);

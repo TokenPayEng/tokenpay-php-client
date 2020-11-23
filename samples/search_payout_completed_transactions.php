@@ -11,6 +11,6 @@ $request = array(
     'settlementType' => SettlementType::SETTLEMENT
 );
 
-$response = FunctionalTestConfig::tokenpay()->settlementReporting()->retrievePayoutCompletedTransactions($request);
+$response = FunctionalTestConfig::tokenpay()->settlementReporting()->searchPayoutCompletedTransactions($request);
 
 print_r($response);

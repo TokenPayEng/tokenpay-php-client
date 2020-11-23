@@ -7,6 +7,6 @@ $request = array(
     'endDate' => '2020-01-02T00:00:00'
 );
 
-$response = FunctionalTestConfig::tokenpay()->settlementReporting()->retrieveBouncedSubMerchantRows($request);
+$response = FunctionalTestConfig::tokenpay()->settlementReporting()->searchBouncedSubMerchantRows($request);
 
 print_r($response);

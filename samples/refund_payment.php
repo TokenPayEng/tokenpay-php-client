@@ -10,6 +10,6 @@ $request = array(
     'refundDestinationType' => RefundDestinationType::CARD
 );
 
-$response = FunctionalTestConfig::tokenpay()->payment()->refund($request);
+$response = FunctionalTestConfig::tokenpay()->payment()->refundPayment($request);
 
 print_r($response);

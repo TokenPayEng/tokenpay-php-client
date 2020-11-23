@@ -10,6 +10,6 @@ $request = array(
     'currency' => Currency::TL
 );
 
-$response = FunctionalTestConfig::tokenpay()->installment()->retrieveInstallments($request);
+$response = FunctionalTestConfig::tokenpay()->installment()->searchInstallments($request);
 
 print_r($response);

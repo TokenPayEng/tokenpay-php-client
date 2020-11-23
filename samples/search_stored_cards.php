@@ -6,7 +6,7 @@ $request = array(
     'cardUserKey' => 'de050909-39a9-473c-a81a-f186dd55cfef'
 );
 
-$response = FunctionalTestConfig::tokenpay()->card()->searchCards($request);
+$response = FunctionalTestConfig::tokenpay()->payment()->searchStoredCards($request);
 
 // todo: errors varsa exception firlat. yoksa json_decode edip array dön.
 
