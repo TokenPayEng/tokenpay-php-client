@@ -1,5 +1,5 @@
 {
-    "name": "tokenpay/tokenpay-php-client",
+    "name": "tokenpayeng/tokenpay",
     "type": "library",
     "description": "tokenpay php client",
     "homepage": "https://www.tokenpay.com.tr",
@@ -10,7 +10,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Token Inc. and contributors",
+            "name": "TokenPay Inc. and contributors",
             "homepage": "https://github.com/craftbaseio/tokenpay-php-client/contributors"
         }
     ],
