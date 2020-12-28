@@ -13,6 +13,7 @@ $request = array(
     'currency' => Currency::TL,
     'paymentGroup' => PaymentGroup::PRODUCT,
     'conversationId' => '456d1297-908e-4bd6-a13b-4be31a6e47d5',
+    'cardUserKey' => 'eee24372-1735-4bc1-a534-023f1e02a03e',
     'callbackUrl' => 'https://www.your-website.com/tokenpay-checkout-callback',
     'buyerId' => 1,
     'items' => array(
