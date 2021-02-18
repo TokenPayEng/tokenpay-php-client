@@ -52,4 +52,10 @@ class OnboardingAdapter extends BaseAdapter
         $path = "/onboarding/v1/buyers/" . $buyerId;
         return parent::httpGet($path);
     }
+
+    public function searchBuyers(array $request)
+        {
+            $path = "/onboarding/v1/buyers" . RequestQueryParamsBuilder::buildQuery($request);
+            return parent::httpGet($path);
+        }
 }
