@@ -106,4 +106,10 @@ class PaymentAdapter extends BaseAdapter
         $path = "/payment/v1/cards" . RequestQueryParamsBuilder::buildQuery($request);
         return parent::httpGet($path);
     }
+
+    public function postAuthPayment($paymentId, array $request)
+    {
+        $path = "/payment/v1/card-payments/" . $paymentId . "/post-auth";
+        return $this->httpPost($path, $request);
+    }
 }
