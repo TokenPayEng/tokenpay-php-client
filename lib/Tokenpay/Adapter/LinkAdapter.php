@@ -29,12 +29,6 @@ class LinkAdapter extends BaseAdapter
         return parent::httpGet($path);
     }
 
-    public function deleteLink($id)
-    {
-        $path = "/tokenlink/v1/products/" . $id;
-        return parent::httpDelete($path);
-    }
-
     public function searchLinks(array $request)
     {
         $path = "/tokenlink/v1/products" . RequestQueryParamsBuilder::buildQuery($request);;
