@@ -53,6 +53,12 @@ class PaymentAdapter extends BaseAdapter
         return parent::httpPost($path, $request);
     }
 
+    public function updatePaymentTransaction($paymentTransactionId, array $request)
+    {
+        $path = "/payment/v1/payment-transactions/" . $paymentTransactionId;
+        return parent::httpPut($path, $request);
+    }
+
     public function refundPayment(array $request)
     {
         $path = "/payment/v1/refunds";
